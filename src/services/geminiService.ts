@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { Question, Subject, Level, Mode, Language, Unit, LessonStepContent, StudyPlan } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || "" });
 
 const SYSTEM_INSTRUCTION = `Tu es un assistant pédagogique expert intégré dans une application de révision scolaire inspirée de Khan Academy. Ton rôle est d'accompagner l'élève dans sa progression selon la **pédagogie de la maîtrise** : un concept n'est validé que lorsque l'élève le maîtrise vraiment, à son propre rythme.
 
