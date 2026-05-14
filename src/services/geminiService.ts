@@ -69,7 +69,7 @@ export async function getTopics(subject: Subject, level: Level, language: Langua
   Réponds UNIQUEMENT par un tableau JSON de chaînes de caractères.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -99,7 +99,7 @@ export async function generateInitialTest(subject: Subject, level: Level, langua
   Réponds en ${language} au format JSON.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -152,7 +152,7 @@ export async function generateLessonCatalogue(subject: Subject, level: Level, la
   Réponds en ${language} au format JSON.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -202,7 +202,7 @@ export async function generateLessonStep(lessonTitle: string, step: number, subj
   const prompt = `${stepPrompts[step]} Réponds en ${language} au format JSON.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -332,7 +332,7 @@ export async function generateAudioTranscription(theme: string, language: string
   Réponds en JSON: { "text": string, "phonetic": string, "translation": string }`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: { 
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -362,7 +362,7 @@ export async function evaluatePronunciation(audioBase64: string, targetText: str
   - details: { sounds: number, rhythm: number, intonation: number } (scores de 0 à 100)`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: [
       { text: prompt },
       {
@@ -412,7 +412,7 @@ export async function generateQuestions(subject: Subject, level: Level, mode: Mo
   Réponds UNIQUEMENT en JSON compact pour la rapidité.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -520,7 +520,7 @@ export async function verifyOpenAnswer(question: string, userAnswer: string, cor
   Réponds en JSON: { "isCorrect": boolean, "feedback": string }`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -551,7 +551,7 @@ export async function getDetailedFeedback(question: string, userAnswer: string, 
   Max 3 phrases.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -572,7 +572,7 @@ export async function generateRevisionSheet(subject: Subject, level: Level, topi
   Réponds UNIQUEMENT en JSON avec les champs "content" (string Markdown) et "keyPoints" (array of strings).`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
@@ -645,7 +645,7 @@ export async function generateStudyPlan(subject: Subject, level: Level, topic: s
   Réponds dans la langue suivante : ${language}.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: prompt,
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
