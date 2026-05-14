@@ -400,7 +400,7 @@ export async function evaluatePronunciation(audioBase64: string, targetText: str
 }
 
 export async function generateQuestions(subject: Subject, level: Level, mode: Mode, topic: string, language: Language): Promise<Question[]> {
-  const prompt = `Génère 5 questions de révision pour le niveau ${level} en ${subject}, spécifiquement sur le thème "${topic}".
+  const prompt = `Génère 10 questions de révision pour le niveau ${level} en ${subject}, spécifiquement sur le thème "${topic}".
   Le mode est ${mode}. 
   Réponds dans la langue suivante : ${language}.
   Inclus un mélange varié de types: QCM (prioritaire), OUVERTE, DEFINITION, CALCUL, DRAG_DROP, IMAGE_ANALYSIS, MAP_INTERACTIVE, TRUE_FALSE, FILL_BLANKS, MATCHING, AUDIO_DIALOGUE, PRONUNCIATION, AUDIO_DICTATION, LISTENING_COMPREHENSION, et AUDIO_FLASHCARD.
